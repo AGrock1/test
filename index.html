@@ -22,11 +22,25 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <style>
-      #ftco-navbar.scrolled {
-        background: #fff !important;
-      }
-    </style>
+<style>
+  #ftco-navbar.scrolled {
+    /* --- You can change this color to match your site --- */
+    background: #1a1a1a !important; /* A dark grey example */
+    box-shadow: 0px 5px 20px -17px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  /* Make links, brand name, and mobile menu text white on the dark background */
+  #ftco-navbar.scrolled .nav-link span,
+  #ftco-navbar.scrolled .navbar-brand,
+  #ftco-navbar.scrolled .navbar-toggler {
+     color: #ffffff !important;
+  }
+
+  /* Make the three lines of the mobile menu icon white */
+  #ftco-navbar.scrolled .navbar-toggler .oi-menu {
+    color: #ffffff !important;
+  }
+</style>
 
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
