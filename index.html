@@ -694,6 +694,18 @@
   <script src="js/scrollax.min.js"></script>
   
   <script src="js/main.js"></script>
+  <script>
+  $(document).ready(function(){
+    $('#ftco-nav .nav-link').on('click', function(){
+      if ($('.navbar-collapse').hasClass('show')) {
+        $('.navbar-toggler').trigger('click');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
     
   </body>
 </html>
