@@ -213,15 +213,26 @@
   
   <script src="js/main.js"></script>
     
-  <script>
-    $(document).ready(function(){
-      $('#ftco-nav .nav-link').on('click', function(){
-        if ($('.navbar-collapse').hasClass('show')) {
-          $('.navbar-toggler').trigger('click');
-        }
-      });
+<script>
+  $(document).ready(function(){
+
+    // Fix for mobile menu closing on click
+    $('#ftco-nav .nav-link').on('click', function(){
+      if ($('.navbar-collapse').hasClass('show')) {
+        $('.navbar-toggler').trigger('click');
+      }
     });
-  </script>
+
+    // Failsafe to re-enable scrolling after smooth-scroll animation
+    $('a[href^="#"]').on('click', function() {
+      // Wait 1 second for the animation to finish, then enable scrolling
+      setTimeout(function() {
+        $('html, body').css('overflow', 'auto');
+      }, 1000); 
+    });
+
+  });
+</script>
     
   </body>
 </html>
