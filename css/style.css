@@ -9682,3 +9682,72 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+/* ----- Slider alignment fixes ----- */
+
+/* Make sure slider rows and children align centrally */
+.home-slider .slider-item .row,
+.home-slider .slider-item .row > .one-forth,
+.home-slider .slider-item .row > .one-third {
+  align-items: center; /* vertical-center content in each slide */
+}
+
+/* Fallback for elements that expect full viewport height */
+.js-fullheight {
+  height: 100vh;
+  min-height: 500px; /* safe default for desktops */
+}
+
+/* Ensure hero container doesn't clip the arrow on small screens */
+.hero {
+  position: relative;
+  overflow: visible;
+}
+
+/* ---------- Mobile-specific overrides ---------- */
+@media (max-width: 991.98px) {
+  /* Disable Scrollax vertical transforms on small screens */
+  .slider-text [data-scrollax],
+  .slider-text [data-scrollax] * {
+    transform: none !important;
+    -webkit-transform: none !important;
+  }
+
+  /* Let the .js-fullheight elements become flexible on mobile */
+  .js-fullheight {
+    height: auto;
+    min-height: 50vh;
+  }
+
+  /* Reduce the push-up/push-down and center text */
+  .slider-text {
+    padding-top: 4vh;
+    padding-bottom: 8vh;
+  }
+
+  .one-forth.d-flex {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transform: none !important;
+  }
+
+  /* Move the scroll-down arrow up a bit on phones */
+  .scroll-down-btn {
+    bottom: 20px !important;
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+}
+
+/* Extra tweak for very small phones */
+@media (max-width: 480px) {
+  .scroll-down-btn {
+    bottom: 14px !important;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .slider-text { padding-bottom: 6vh; }
+}

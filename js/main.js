@@ -269,6 +269,17 @@
     fixedContentPos: false
   });
 
+  // Disable Scrollax on small screens to avoid vertical text shifts
+if (typeof $.Scrollax === 'function') {
+  if ($(window).width() > 991) {
+    $.Scrollax();
+  } else {
+    // If Scrollax already initialized, reset transforms
+    $('.slider-text [data-scrollax]').css('transform','none');
+  }
+}
+
+
 
 
 
